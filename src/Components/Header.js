@@ -28,6 +28,9 @@ const Container = styled.div`
   align-items: center;
   background-color: var(--slack-color);
   color: white;
+  position: fixed;
+  height: 60px;
+  width: 100%;
 `;
 const Left = styled.div`
   display: flex;
@@ -35,7 +38,9 @@ const Left = styled.div`
   align-items: center;
   flex: 0.3;
 `;
-const AvatarIcon = styled(Avatar)``;
+const AvatarIcon = styled(Avatar)`
+  margin-left: 20px;
+`;
 const ClockIcon = styled(AccessTimeIcon)``;
 const Searchbar = styled.div`
   flex: 0.4;
