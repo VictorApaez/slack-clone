@@ -18,7 +18,8 @@ const Container = styled.div`
   padding: 15px;
 
   &:hover {
-    background-color: red;
+    background-color: #340e46;
+    opacity: 0.9;
   }
 `;
 

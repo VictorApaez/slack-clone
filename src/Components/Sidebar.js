@@ -10,6 +10,8 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import AppsIcon from '@mui/icons-material/Apps';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import AddIcon from '@mui/icons-material/Add';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import SidebarOption from './SidebarOption';
 
 function Sidebar() {
@@ -27,27 +29,19 @@ function Sidebar() {
           <PencilIcon />
         </HeaderContainer>
 
-        <SidebarOption Icon={InsertCommentIcon} title='Threads'></SidebarOption>
-        <SidebarOption
-          Icon={InboxIcon}
-          title='Mesntions & Reactions'
-        ></SidebarOption>
+        <SidebarOption Icon={InsertCommentIcon} title='Threads' />
+        <SidebarOption Icon={InboxIcon} title='Mesntions & Reactions' />
         <SidebarOption Icon={DraftsIcon} title='Saved items'></SidebarOption>
-        <SidebarOption
-          Icon={BookmarkBorderIcon}
-          title='Channel Browser'
-        ></SidebarOption>
-        <SidebarOption
-          Icon={InsertCommentIcon}
-          title='this is the title'
-        ></SidebarOption>
-        <SidebarOption
-          Icon={PeopleAltIcon}
-          title='People & user groups'
-        ></SidebarOption>
-        <SidebarOption Icon={AppsIcon} title='Apps'></SidebarOption>
-        <SidebarOption Icon={FileCopyIcon} title='File browser'></SidebarOption>
-        <SidebarOption Icon={ExpandLessIcon} title='Show less'></SidebarOption>
+        <SidebarOption Icon={BookmarkBorderIcon} title='Channel Browser' />
+        <SidebarOption Icon={InsertCommentIcon} title='this is the title' />
+        <SidebarOption Icon={PeopleAltIcon} title='People & user groups' />
+        <SidebarOption Icon={AppsIcon} title='Apps' />
+        <SidebarOption Icon={FileCopyIcon} title='File browser' />
+        <SidebarOption Icon={ExpandLessIcon} title='Show less' />
+        <hr />
+        <SidebarOption Icon={ExpandMoreIcon} title='Channels' />
+        <hr />
+        <SidebarOption Icon={AddIcon} title='Add Channel' />
       </Container>
     </>
   );
@@ -64,6 +58,11 @@ const Container = styled.div`
   width: 100%;
   background-color: var(--slack-color);
   color: white;
+  > hr {
+    border: none;
+    height: 1px;
+    background-color: gray;
+  }
 `;
 const HeaderContainer = styled.div`
   display: flex;
