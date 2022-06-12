@@ -1,11 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function SidebarOption({ Icon, title }) {
+function SidebarOption({ Icon, title, createOption }) {
+  const createRoom = () => {
+    const channelName = prompt('Please enter room name.');
+    console.log(channelName);
+  };
   return (
-    <Container>
+    <Container onClick={createOption && createRoom}>
       {Icon && <Icon />}
-      <OptionTitle>{title}</OptionTitle>
+      {Icon ? (
+        <OptionTitle>{title}</OptionTitle>
+      ) : (
+        <>
+          <h2>#</h2>
+          <OptionTitle>{title}</OptionTitle>
+        </>
+      )}
     </Container>
   );
 }
@@ -18,7 +29,7 @@ const Container = styled.div`
   padding: 15px;
 
   &:hover {
-    background-color: #340e46;
+    background-color: purple;
     opacity: 0.9;
   }
 `;

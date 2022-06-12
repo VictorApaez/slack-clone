@@ -13,8 +13,14 @@ import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import AddIcon from '@mui/icons-material/Add';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import SidebarOption from './SidebarOption';
+import { db } from '../firebase';
+import { collection, doc, getDoc, setDoc } from 'firebase/firestore';
+import { useCollection } from 'react-firebase-hooks/firestore';
 
 function Sidebar() {
+  const docRef = doc(db, 'channels/9iEVinJvgstMkRf8JWKq');
+  const channelName = await getDoc(docRef);
+
   return (
     <>
       <Container>
@@ -41,7 +47,8 @@ function Sidebar() {
         <hr />
         <SidebarOption Icon={ExpandMoreIcon} title='Channels' />
         <hr />
-        <SidebarOption Icon={AddIcon} title='Add Channel' />
+        <SidebarOption Icon={AddIcon} title='Add Channel' createOption />
+        <SidebarOption title='*channel name*' />
       </Container>
     </>
   );
