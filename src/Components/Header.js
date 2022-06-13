@@ -25,6 +25,7 @@ export default Header;
 
 const Container = styled.div`
   display: flex;
+  z-index: 999;
   align-items: center;
   background-color: var(--slack-color);
   color: white;

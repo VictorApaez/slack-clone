@@ -18,8 +18,8 @@ import { collection, doc, getDoc, setDoc } from 'firebase/firestore';
 import { useCollection } from 'react-firebase-hooks/firestore';
 
 function Sidebar() {
-  const docRef = doc(db, 'channels/9iEVinJvgstMkRf8JWKq');
-  const channelName = await getDoc(docRef);
+  const [channels, laoding, error] = useCollection(collection(db, 'channels'));
+  // const channelName = await getDoc(docRef);
 
   return (
     <>
@@ -49,6 +49,11 @@ function Sidebar() {
         <hr />
         <SidebarOption Icon={AddIcon} title='Add Channel' createOption />
         <SidebarOption title='*channel name*' />
+        {channels?.docs.map((doc) => (
+          <SidebarOption
+            title={doc._document.data.value.mapValue.fields.name.stringValue}
+          />
+        ))}
       </Container>
     </>
   );

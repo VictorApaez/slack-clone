@@ -2,8 +2,8 @@
   margin: 0;
 }
 body {
-  --slack-color: #3f0f40;
-  overflow: hidden;
+  --slack-color: hsl(299, 62%, 15%);
+  /* overflow: hidden; */
 
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
