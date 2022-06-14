@@ -52,6 +52,8 @@ function Sidebar() {
         {channels?.docs.map((doc) => (
           <SidebarOption
             title={doc._document.data.value.mapValue.fields.name.stringValue}
+            key={doc._key.path.segments[6]}
+            id={doc._key.path.segments[6]}
           />
         ))}
       </Container>
